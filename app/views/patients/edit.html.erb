@@ -1,0 +1,13 @@
+<h1>Editing Patient</h1>
+
+<% if current_user.name == "Doctor" %>
+  <%= render 'formDoctor', patient: @patient %>
+<% elsif current_user.name == "Pharmacist" %>
+  <%= render 'formPharmacist', patient: @patient %>
+<% elsif current_user.name == "Nurse" %>
+  <%= render 'formNurse', patient: @patient %>
+<% end %>
+
+
+<%= link_to 'Show', @patient %> |
+<%= link_to 'Back', patients_path %>
